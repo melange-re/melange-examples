@@ -16,8 +16,6 @@ jobs:
           - macos-latest
           - ubuntu-latest
           # - windows-latest # for some reason windows build is not picking dune 3.5
-        ocaml-compiler: 5.1.0
-        opam-depext: false
 
       fail-fast: false
     runs-on: ${{ matrix.system }}
@@ -31,7 +29,8 @@ jobs:
       - name: Use OCaml ${{ matrix.ocaml-compiler }}
         uses: ocaml/setup-ocaml@v2
         with:
-          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+          ocaml-compiler: 5.1.x
+          opam-depext: false
 
       - name: Install all deps
         run: make install
