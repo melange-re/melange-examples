@@ -1,0 +1,7 @@
+{
+  "ocaml.sandbox": {
+    "kind": "opam",
+    "switch": "${workspaceFolder:melange-examples}"
+  },
+  "ocaml.server.codelens": true
+}
