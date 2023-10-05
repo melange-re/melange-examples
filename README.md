@@ -12,15 +12,15 @@ If you are looking for a template with esy, check
 Each example is a self-contained, complete project with its README, a Makefile
 and an opam file to define the dependencies.
 
-To use any of the examples, clone this repository, and then just replace the
-contents with the folder of the example you want to use to get started.
+To use any of the examples, you can copy/paste the example folder in a new
+project and start hacking on it.
 
-Then follow the example `README.md` instructions to get started.
+Each example includes a `README.md` with instructions on how to get started.
 
-- [**`1-node`**](examples/1-node) &nbsp;&mdash;&nbsp; a simple Node.js application,
-  prints a "hello world" message when it runs.
-- [**`2-react`**](examples/2-react) &nbsp;&mdash;&nbsp; a simple Reason React app with
-  Webpack.
+- [**`1-node`**](examples/1-node) &nbsp;&mdash;&nbsp; a simple Node.js
+  application, prints a "hello world" message when it runs.
+- [**`2-react`**](examples/2-react) &nbsp;&mdash;&nbsp; a simple Reason React
+  app with Webpack.
 
 ## Contributing
 

@@ -34,4 +34,4 @@ JavaScript dependencies
 - `make watch`: watch for the filesystem and have Melange rebuild on every
 change
 - `make serve`: serve the application with a local HTTP server
-
+- `make bundle`: creates a full bundle with the generated `js` files and `html` page
