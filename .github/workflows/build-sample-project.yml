@@ -38,9 +38,5 @@ jobs:
       - name: Build all examples
         run: make build
 
-      - name: Bundle React app
-        run: make -C examples/2-react bundle
-
-      - name: Run Node app
-        run: |
-          node _build/default/src/node/src/Hello.js
+      - name: Test all examples
+        run: make test

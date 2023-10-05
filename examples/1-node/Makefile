@@ -28,6 +28,10 @@ build: ## Build the project
 	$(DUNE) build @1-node # @1-node is a dune alias: https://dune.readthedocs.io/en/stable/overview.html#term-alias
   # Another way to build the project would be just calling `dune build`, which will build the `@@default` alias: https://dune.readthedocs.io/en/stable/reference/aliases.html#default
 
+.PHONY: test
+test: build ## Test the project
+	$(DUNE) test
+
 .PHONY: build_verbose
 build_verbose: ## Build the project
 	$(DUNE) build --verbose @1-node

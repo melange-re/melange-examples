@@ -21,34 +21,37 @@ lockfile).
 The best approach is probably to take one of the existing examples folders, copy
 it, and proceed from there.
 
-## Working with dune monorepo
+## Working across examples
 
-The `melange-examples` project is configured as monorepo. This is done by
-including a `dune-project` at the top level, so that running `dune build` at the
-top will build all examples, generate all opams, etc. However, this might be
-problematic when working on a specific example, because the `_build` folder will
-be placed at the top folder, rather than inside the example folder.
+The `melange-examples` project is configured in a way that each project can be
+built as if it was on its own. That's why `dune-project` files are included on
+each project.
 
-If you want to emulate how a user would work in your example, just rename the
-top level [dune-project](./dune-project) to `_dune-project` temporarily, then
-run any `dune build` or other commands inside your example folder. With this
-configuration, Dune will set the root to the example folder (more info in the
+As there is no `dune-project` at the top level, the Dune root (more info in the
 Dune ["Finding the
-root"](https://dune.readthedocs.io/en/latest/usage.html#finding-the-root) docs).
+root"](https://dune.readthedocs.io/en/latest/usage.html#finding-the-root) docs)
+is on each example folder, and so `dune` has to be called from there.
 
-Once you are done, remember to rename back the file or not commit it.
+To be able to orchestrate builds and tests across all examples, a series of
+Makefiles are included with some structure:
+- `install`: commands needed to install deps. Generally it will be `opam
+  install`, plus `npm install` if the project requires any JavaScript packages
+- `build`: commands needed to build the example. Generally it will be at least
+  `dune build` plus any other scripts
+- `test`: commands to test the project
 
 ## Adding tests
 
 It is recommended to include some tests for your example. See some inspiration
-in the `1-node` example [dune file](./1-node/src/dune), which includes a rule
-with alias `runtest`.
+in the `1-node` example [dune file](./examples/1-node/src/dune), which includes
+a rule with alias `runtest`. For simple cases, the test can be just running the
+application, or making sure all bundling works.
 
 ## Updating `melange-examples.opam` and `Makefile`
 
 When adding an example, remember to:
 
 - add it to the main `melange-examples.opam`
-- add it to the main `Makefile`'s `install` and `build` commands
+- add it to the main `Makefile`'s `install`, `build` and `test` commands
 
 so that it gets built and tested in CI.

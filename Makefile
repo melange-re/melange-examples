@@ -33,6 +33,16 @@ build: ## Build all examples
 	make -C examples/1-node build
 	make -C examples/2-react build
 
+.PHONY: test
+test: ## Test all examples
+	make -C examples/1-node test
+	make -C examples/2-react test
+
+.PHONY: clean
+clean: ## Clean all examples
+	make -C examples/1-node clean
+	make -C examples/2-react clean
+
 .PHONY: format
 format: ## Format the codebase with ocamlformat
 	$(DUNE) build @fmt --auto-promote
