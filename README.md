@@ -21,6 +21,8 @@ Each example includes a `README.md` with instructions on how to get started.
   application, prints a "hello world" message when it runs.
 - [**`2-react`**](examples/2-react) &nbsp;&mdash;&nbsp; a simple Reason React
   app with Webpack.
+- [**`3-vite`**](examples/3-vite) &nbsp;&mdash;&nbsp; a simple Reason React
+  app with Vite.
 
 ## Contributing
 
