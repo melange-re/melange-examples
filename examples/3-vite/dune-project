@@ -1,0 +1,34 @@
+(lang dune 3.8)
+
+(using melange 0.1)
+
+(generate_opam_files true)
+
+(name 3-vite)
+
+(license "MIT")
+
+(maintainers <your_name>)
+
+(authors <your_name>)
+
+(homepage https://github.com/your/project)
+
+(bug_reports https://github.com/your/project/issues)
+
+(package
+ (name 3-vite)
+ (synopsis "Melange React example with Vite")
+ (description "Minimal React example with Melange and Vite")
+ (depends
+  (melange
+   (>= "2.0.0"))
+  (reason
+   (>= "3.10.0"))
+  (reason-react
+   (>= "0.13.0"))
+  reason-react-ppx
+  (ocaml-lsp-server :with-test) ; todo: use with-dev-setup once opam 2.2 is out
+  (opam-check-npm-deps :with-test) ; todo: use with-dev-setup once opam 2.2 is out
+  (ocamlformat :with-test) ; todo: use with-dev-setup once opam 2.2 is out
+  ))
