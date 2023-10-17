@@ -1,0 +1,6 @@
+type t = {
+  title: string;
+  body: string;
+}
+
+type articles = t list
