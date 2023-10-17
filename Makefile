@@ -27,21 +27,25 @@ init: create-switch install ## Configure everything to develop this repository i
 install: ## Install development dependencies
 	make -C examples/1-node install
 	make -C examples/2-react install
+	make -C examples/3-vite install
 
 .PHONY: build
 build: ## Build all examples
 	make -C examples/1-node build
 	make -C examples/2-react build
+	make -C examples/3-vite build
 
 .PHONY: test
 test: ## Test all examples
 	make -C examples/1-node test
 	make -C examples/2-react test
+	make -C examples/3-vite test
 
 .PHONY: clean
 clean: ## Clean all examples
 	make -C examples/1-node clean
 	make -C examples/2-react clean
+	make -C examples/3-vite clean
 
 .PHONY: format
 format: ## Format the codebase with ocamlformat

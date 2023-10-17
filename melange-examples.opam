@@ -9,9 +9,11 @@ bug-reports: "https://github.com/your/project/issues"
 depends: [
   "1-node"
   "2-react"
+  "3-vite"
 ]
 dev-repo: "git+https://github.com/your/project.git"
 pin-depends: [
   "1-node.dev" "./examples/1-node"
   "2-react.dev" "./examples/2-react"
+  "3-vite.dev" "./examples/3-vite"
 ]
