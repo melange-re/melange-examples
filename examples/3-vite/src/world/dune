@@ -1,0 +1,4 @@
+(library
+ (name world)
+ (public_name 3-vite.world)
+ (modes melange))
