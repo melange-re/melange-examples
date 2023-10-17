@@ -1,0 +1,17 @@
+(library
+  (name common)
+  (libraries dream atdgen-runtime)
+  (preprocess (pps lwt_ppx)))
+
+(rule
+ (targets article_j.ml article_j.mli)
+ (deps article.atd)
+ (action
+  (run atdgen -j -j-std %{deps})))
+
+(rule
+ (targets article_t.ml article_t.mli)
+ (deps article.atd)
+ (action
+  (run atdgen -t %{deps})))
+
